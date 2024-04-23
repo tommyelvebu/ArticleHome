@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.title }} - My Website{% endblock %}
+
+{% block content %}
+<h1>Articles in {{ category.title }}</h1>
+{% if articles %}
+    <ul>
+        {% for article in articles %}
+        <li>
+            <strong>{{ article.title }}</strong> - {{ article.date|datetime }}
+            <p>{{ article.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No articles found in this category.</p>
+{% endif %}
+{% endblock %}

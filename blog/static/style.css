@@ -1,0 +1,63 @@
+/* Basic styles, ensure these do not conflict with form-specific styles */
+body {
+   font-family: Arial, sans-serif;
+}
+header, footer {
+   background-color: #f8f9fa;
+   padding: 10px;
+   text-align: center;
+}
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   display: flex; /* Ensures that the list is displayed in a row */
+   justify-content: center; /* Centers the list items horizontally */
+}
+nav ul li {
+   display: inline;
+   margin-right: 10px;
+}
+main {
+   padding: 20px;
+}
+.flashes {
+   color: red;
+}
+footer {
+   text-align: center; /* Center the footer content */
+}
+
+/* Specific styles for the article form to prevent conflicts */
+.article-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+.article-form label, .article-form input, .article-form select, .article-form textarea, .article-form button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+.article-form input, .article-form select, .article-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.article-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.article-form button:hover {
+    background-color: #45a049;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   text-align: center;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>ArticleHome - The Best Site For Articles</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                <li><a href="{{ url_for('article_create') }}">Create Article</a></li>
+                <!-- Example of static category links; for dynamic, you would inject categories here -->
+                <li><a href="{{ url_for('category', category_id=1) }}">Technology</a></li>
+                <li><a href="{{ url_for('category', category_id=2) }}">Lifestyle</a></li>
+                <li><a href="{{ url_for('category', category_id=3) }}">Entertainment</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </section>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© Website created by Tommy Elvebu </p>
+    </footer>
+</body>
+</html>
